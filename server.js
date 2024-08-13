@@ -14,8 +14,13 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4; Routing code
-app.get("/", function(req, res){
-    res.end("<h1>HELLO WORLD by BekzodAli</h1>");
+app.post("/create-item", (req, res) => {
+    console.log(req);
+    res.json({test: "success"});
+});
+
+app.get("/", function(req, res) {
+    res.render("harid");
 });
 
 const server = http.createServer(app);
