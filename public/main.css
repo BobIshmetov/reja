@@ -325,6 +325,49 @@
   
 }
 
+#doira,
+#doira2,
+#doira3,
+#doira4,
+#romb,
+#romb2,
+#uchburchak {
+    position: absolute;
+    margin-top: 37.86px;
+    margin-left: 36.05px;
+}
+
+#doira2 {
+    margin-left: 554.45px;
+    margin-top: 378.33px;
+}
+
+#doira3 {
+    margin-top: 419.22px;
+    margin-left: 84.1px;
+}
+
+#doira4 {
+    margin-top: 59.26px;
+    margin-left: 516.55px;
+}
+
+#romb {
+    margin-top: 330.69px;
+    margin-left: 370.4px;
+}
+
+#romb2 {
+    margin-top: 79.44px;
+    margin-left: 892.37px;
+    z-index: 1;
+}
+
+#uchburchak {
+    margin-top: 424.09px;
+    margin-left: 917.96px;
+}
+
 .midd_1-2 {
     position: relative;
     display: flex;
