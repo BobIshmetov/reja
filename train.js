@@ -87,18 +87,41 @@ A-TASK:
 Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashgan sonini return qilishi kerak boladi.
 MASALAN countLetter("e", "engineer") 3ni return qiladi.*/
 
+// //Javoob:
+
+// function countLetter(e, engineer) {
+//     let a = 0;
+//     for (let i = 0; i < engineer.length; i++) {
+//         if (engineer[i] === e) {
+//             a++;
+//         }
+//     }
+//     return a;
+// }
+
+
+// const ATASC = countLetter("e", "engineer");
+// console.log("A-TASK:", ATASC);
+
+/*Masalani izohi
+B-TASK: 
+
+Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+
+*/
+
 //Javoob:
 
-function countLetter(e, engineer) {
+function countDigits(str){
     let a = 0;
-    for (let i = 0; i < engineer.length; i++) {
-        if (engineer[i] === e) {
+    for(let i = 0; i < str.length; i++ ) {
+        if (!isNaN(str[i]) && str[i] !== ' ') {
             a++;
         }
     }
     return a;
-}
+};
 
-
-const ATASC = countLetter("e", "engineer");
-console.log("A-TASK:", ATASC);
+const raqamlarSoni = countDigits("ad2a54y79wet0sfgb9");
+console.log("Umumiy:", raqamlarSoni);

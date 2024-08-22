@@ -28,6 +28,7 @@ app.set("view engine", "ejs");
 
 // 4; Routing code  
 app.post("/create-item", (req, res) => {
+    console.log('user entered /create-item');
     const new_reja = req.body.reja;
     db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
         if (err) {
@@ -44,6 +45,8 @@ app.post("/create-item", (req, res) => {
 // })
 
 app.get("/", function (req, res) {
+    console.log('user entered /');
+    
     db.collection("plans")
         .find()
         .toArray((err, data) => {
@@ -51,7 +54,6 @@ app.get("/", function (req, res) {
                 console.log(err); 
                     res.end("something went wrong");
                 }else {
-                    console.log(data);
                     res.render("reja", { items: data });              
                 }
             
