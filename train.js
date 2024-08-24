@@ -80,7 +80,7 @@
 
 // Misol:
 
-
+//-----------------------------------------------------------------------------------------
 /*Masalani izohi
 A-TASK: 
 
@@ -102,6 +102,8 @@ MASALAN countLetter("e", "engineer") 3ni return qiladi.*/
 
 // const ATASC = countLetter("e", "engineer");
 // console.log("A-TASK:", ATASC);
+//----------------------------------------------------------------------------------------
+
 
 /*Masalani izohi
 B-TASK: 
@@ -113,15 +115,42 @@ MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 
 //Javoob:
 
-function countDigits(str){
-    let a = 0;
-    for(let i = 0; i < str.length; i++ ) {
-        if (!isNaN(str[i]) && str[i] !== ' ') {
-            a++;
-        }
+// function countDigits(str){
+//     let a = 0;
+//     for(let i = 0; i < str.length; i++ ) {
+//         if (!isNaN(str[i]) && str[i] !== ' ') {
+//             a++;
+//         }
+//     }
+//     return a;
+// };
+
+// const raqamlarSoni = countDigits("ad2a54y79wet0sfgb9");
+// console.log("Umumiy:", raqamlarSoni);
+
+
+//----------------------------------------------------------------------------------------
+
+
+/*Masalani izohi
+C-TASK: 
+
+Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true
+
+*/
+
+//Javoob:
+
+function checkContent(str1, str2) {
+    
+    if(str1.sort === str2.sort && str1.length === str2.length) {
+        return true;
+    } else {
+        return false;
     }
-    return a;
 };
 
-const raqamlarSoni = countDigits("ad2a54y79wet0sfgb9");
-console.log("Umumiy:", raqamlarSoni);
+const result = checkContent ("mitgroup", "gmtiprou");
+console.log("result:", result);
+ 
