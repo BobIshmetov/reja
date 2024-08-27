@@ -142,15 +142,76 @@ MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true
 
 //Javoob:
 
-function checkContent(str1, str2) {
+// function checkContent(str1, str2) {
     
-    if(str1.sort === str2.sort && str1.length === str2.length) {
-        return true;
-    } else {
-        return false;
-    }
+//     if(str1.sort === str2.sort && str1.length === str2.length) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// };
+
+// const result = checkContent ("mitgroup", "gmtiprou");
+// console.log("result:", result);
+ 
+/*Masalani izohi
+
+D-TASK: 
+
+Shunday class tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin,
+ biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
+MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
+shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+*/
+
+const moment = require('moment');
+
+class Shop {
+    //State
+
+    //Constructor
+    constructor(pruduct1, pruduct2, pruduct3){
+        this.pruduct1 = pruduct1;
+        this.pruduct2 = pruduct2;
+        this.pruduct3 = pruduct3;
+    };
+
+    //Method
+    qabul(pruduct, amount ){
+        if (typeof pruduct === "string" && typeof amount === "number" ) {
+            if (pruduct === "non"){
+                this.pruduct1 += amount;
+            }else if (pruduct === "lagmon"){
+                this.pruduct2 += amount;
+            }else if (pruduct === "cola"){
+                this.pruduct3 += amount;
+            }else{
+                console.log("Bunday mahsulot yo`q");
+            }
+        }else{
+            console.log("Ma`lumotni to`g`ri kiriting");            
+        }
+    };
+    sotish(pruduct, amount){
+        if (typeof pruduct === "string" && typeof amount === "number" ) {
+            if (pruduct === "non"){
+                this.pruduct1 >= amount ?  this.pruduct1 -= amount : console.log("omborda non yetarli emas");                
+            }else if (pruduct === "lagmon"){
+                this.pruduct2 >= amount ?  this.pruduct2 -= amount : console.log("omborda lagmon yetarli emas");
+            }else if (pruduct === "cola"){
+                this.pruduct3 >= amount ?  this.pruduct3 -= amount : console.log("omborda cola yetarli emas");                  
+            }else{
+                console.log("Bunday mahsulot yo`q");
+            }
+        }else{
+            console.log("Ma`lumotni to`g`ri kiriting");            
+        }
+    };
+
+    qoldiq(){
+        console.log(`Hozir ${moment().format('HH:mm')} da ${this.pruduct1}ta non, ${this.pruduct2}ta lagmon, ${this.pruduct3}ta cola mavjud`);        
+    };
 };
 
-const result = checkContent ("mitgroup", "gmtiprou");
-console.log("result:", result);
- 
+
+
